@@ -8,6 +8,8 @@ function Header() {
 
   const isAuthenticated = authContext.isAuthenticated;
 
+  const userName = authContext.username;
+
   const Logout = () => {
     authContext.Logout();
   };
@@ -27,7 +29,7 @@ function Header() {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   {isAuthenticated && (
-                    <Link className="nav-link" to="/welcome/in28minutes">
+                    <Link className="nav-link" to={`/welcome/${userName}`}>
                       Home
                     </Link>
                   )}
