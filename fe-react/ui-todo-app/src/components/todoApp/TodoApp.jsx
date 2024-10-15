@@ -5,10 +5,11 @@ import Welcome from "../home/Welcome";
 import Login from "../login/Login";
 import Error from "../error/Error";
 import ListTodo from "../listTodo/ListTodo";
-import Header from "../header/header";
+import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import AuthProvider, { useAuth } from "../security/AuthContext";
 import Logout from "../Logout/Logout";
+import UpDateTodo from "../upDateTodos/UpdateTodo";
 
 const AuthenticatedRoute = ({ children }) => {
   const authContext = useAuth();
@@ -43,11 +44,21 @@ function App() {
               </AuthenticatedRoute>
             }
           />
+
           <Route
             path="/todos"
             element={
               <AuthenticatedRoute>
                 <ListTodo />
+              </AuthenticatedRoute>
+            }
+          />
+
+          <Route
+            path="/todo/:id"
+            element={
+              <AuthenticatedRoute>
+                <UpDateTodo />
               </AuthenticatedRoute>
             }
           />

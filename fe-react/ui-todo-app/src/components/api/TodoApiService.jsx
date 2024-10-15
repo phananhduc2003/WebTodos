@@ -1,11 +1,11 @@
-import axios from "axios";
+import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: "http://localhost:8080",
+    baseURL: 'http://localhost:8080',
 });
 
-export const retrieveAllToDosForUsernameApi = (username) =>
-  apiClient.get(`/users/${username}/todos`);
+export const retrieveAllToDosForUsernameApi = (username) => apiClient.get(`/users/${username}/todos`);
 
-export const deleteToDosApi = (username, id) =>
-  apiClient.delete(`/users/${username}/todos/${id}`);
+export const deleteToDosApi = (username, id) => apiClient.delete(`/users/${username}/todos/${id}`);
+
+export const updateToDosApi = (username, id) => apiClient.get(`/users/${username}/todos/${id}`);
