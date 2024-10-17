@@ -9,7 +9,7 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import AuthProvider, { useAuth } from "../security/AuthContext";
 import Logout from "../Logout/Logout";
-import UpDateTodo from "../upDateTodos/UpdateTodo";
+import RetrieveTodo from "../retrieveTodos/RetrieveTodo";
 
 const AuthenticatedRoute = ({ children }) => {
   const authContext = useAuth();
@@ -58,7 +58,7 @@ function App() {
             path="/todo/:id"
             element={
               <AuthenticatedRoute>
-                <UpDateTodo />
+                <RetrieveTodo />
               </AuthenticatedRoute>
             }
           />
