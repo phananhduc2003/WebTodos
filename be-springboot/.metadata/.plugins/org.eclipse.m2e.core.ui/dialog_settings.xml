@@ -2,7 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="D:\JAVA\learn_spring\New folder\be-springboot\01-rest-api-starting-code"/>
+			<item value="D:\JAVA\learn_spring\full-Web-with-BESpring-FeReact\New folder\01-rest-api-starting-code"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
