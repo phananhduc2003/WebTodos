@@ -17,8 +17,8 @@ function Login() {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = () => {
-    if (authContext.Login(userName, password)) {
+  const handleSubmit = async () => {
+    if (await authContext.Login(userName, password)) {
       navigate(`/welcome/${userName}`);
     } else {
       console.log("fair success");

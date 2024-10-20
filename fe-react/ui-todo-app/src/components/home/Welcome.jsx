@@ -1,16 +1,19 @@
 import { useParams, Link } from "react-router-dom";
 import { retrieveHelloWorldPathVariableBean } from "../api/HelloWorldApi";
 import { useState } from "react";
+import { useAuth } from "../security/AuthContext";
 
 function Welcome() {
   const { username } = useParams();
 
   const [message, setMessage] = useState(null);
 
+  const authContext = useAuth();
+
   function callHelloWorldRestApi() {
     console.log("called");
 
-    retrieveHelloWorldPathVariableBean("Duc")
+    retrieveHelloWorldPathVariableBean("Duc", authContext.token)
       .then((response) => successfulResponse(response))
       .catch((error) => errorResponse(error))
       .finally(() => console.log("cleanup"));
